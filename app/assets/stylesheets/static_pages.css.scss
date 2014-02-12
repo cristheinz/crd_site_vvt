@@ -116,3 +116,11 @@ h3 {
   text-align: center;
   padding-right: 20px;
 }
+.table tbody tr {
+    &.error > td { background-color: #f2dede !important; }
+    //&.error:hover > td { background-color: #b94a48 !important; }
+    &.success > td { background-color: #dff0d8 !important; }
+    //&.success:hover > td { background-color: #468847 !important; }
+    &.warning > td { background-color: #fcf8e3 !important; }
+    //&.warning:hover > td { background-color: #f89406 !important; }
+}

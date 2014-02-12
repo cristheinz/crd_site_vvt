@@ -8,29 +8,52 @@
 			<div class="form-actions">
 				<%= link_to t(:new_pack), new_pack_path, class: 'btn btn-info pull-right' %>
 			</div>
+
+
+			<table class="table">
+				<caption>
+					<div class="row">
+						<div class="span4"><%=t(:visible)%></div>
+						<div class="span4"><%=t(:invisible)%></div>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<span class="badge badge-success"><%=t(:publish)%></span>
+						</div>
+						<div class="span4">
+							<span class="badge badge-warning"><%=t(:warn)%></span>
+							<span class="badge badge-important"><%=t(:not_publish)%></span>
+						</div>
+					</div>
+				</caption>
+				<thead>
+					<tr>
+						<th><%= t(:image)%></th>
+						<th><%= t(:category)%></th>
+						<th><%= t(:promo)%></th>
+						<th><%= t(:star)%></th>
+						<!--<th>International?</th>-->
+						<th><%= t(:options)%></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @packs.each do |pack| %>
+					<tr class="<%= row_status(pack)%>">
+						<td><%= link_to image_tag(pack.image.to_s, class: 'span2'), pack.pdf.to_s, target: '_blank' if pack.image? %></td>
+						<td><%= get_category(pack.category_id) %></td>
+						<td><i class="<%= pack.promo ? 'icon-ok' : 'icon-remove' %>"></i></td>
+						<td><i class="<%= pack.star ? 'icon-ok' : 'icon-remove' %>"></i></td>
+						<!--<td><%= pack.international %></td>-->
+						<td>
+							<%= link_to t(:edit), edit_pack_path(pack), class: 'btn btn-small btn-inverse' %>
+							<%= link_to t(:delete), pack, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-small btn-danger' %>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
 			
 
-	<table class="table table-condensed">
-  		<tr>
-  			<th><%=t(:image)%></th>
-    		<th><%=t(:category)%></th>
-    		<th><%=t(:promo)%></th>
-    		<th><%=t(:star)%></th>
-    		<!--<th>International?</th>-->
-    		<th><%=t(:options)%></th>
-  		</tr>
-	<% @packs.each do |pack| %>
-  		<tr class=<%= row_status(pack)%>>
-  			<td><%= link_to image_tag(pack.image.to_s, class: 'span2'), pack.pdf.to_s, target: '_blank' if pack.image? %></td>
-    		<td><%= get_category(pack.category_id) %></td>
-    		<td><i class="<%= pack.promo ? 'icon-ok' : 'icon-remove' %>"></i></td>
-    		<td><i class="<%= pack.star ? 'icon-ok' : 'icon-remove' %>"></i></td>
-    		<!--<td><%= pack.international %></td>-->
-    		<td><%= link_to t(:edit), edit_pack_path(pack) %>
-    		| <%= link_to t(:delete), pack, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
-  		</tr>
-	<% end %>
-	</table>
 		</div>
 	</div>
 </div>

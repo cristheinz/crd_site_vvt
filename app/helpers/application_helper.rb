@@ -33,7 +33,7 @@ module ApplicationHelper
       'error'
     else
       if pack.image.to_s.empty? || pack.pdf.to_s.empty?
-        'error'
+        'warning'
       else
         'success'
       end
