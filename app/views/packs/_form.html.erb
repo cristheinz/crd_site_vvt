@@ -30,7 +30,7 @@
     <%end%>-->
 
     <%= f.label :pdf do %>
-    	pdf: <%= link_to @pack.pdf.to_s, @pack.pdf.to_s if @pack.pdf? %>
+    	pdf: <%= link_to @pack.pdf.to_s, @pack.pdf.to_s, target: '_blank' if @pack.pdf? %>
     	<%= f.file_field :pdf %>
     <%end%>
 

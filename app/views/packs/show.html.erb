@@ -26,7 +26,7 @@
 
 <p>
 	<b>pdf:</b>
-	<%= link_to @pack.pdf.to_s, @pack.pdf.to_s if @pack.pdf? %>
+	<%= link_to @pack.pdf.to_s, @pack.pdf.to_s, target: '_blank' if @pack.pdf? %>
 </p>
 
 <p>
