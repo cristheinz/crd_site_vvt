@@ -1,0 +1,20 @@
+<% provide(:title, 'Noticias') %>
+<div class="row">
+	<div class="span12">
+		<h3>Ultima hora viajens</h3>
+		<div class="inner-box">
+			<div class="row-fluid">
+			<%@feed.entries.each do |entry| %>
+				<div class="thumbnail span4">
+					<h4><%= link_to entry.title, entry.url, target: '_blank'%></h4>
+					<p>
+						<%=entry.summary.html_safe%>
+						<%= link_to 'ler mais', entry.url, target: '_blank'%>
+					</p>
+				</div>
+			<%end%>
+			</div>
+			<div class="">fonte: <%=@feed.title%></div>
+		</div>
+	</div>
+</div>

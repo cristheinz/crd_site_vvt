@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/tags' %>
+  <%= render 'layouts/ga' if Rails.env.production? %>
+</head>
+<body>
+	<%= render 'layouts/fbinclude' if yield(:title) =="Bem-Vindo!" %>
+    <div class="container" style="background-color: white;padding-bottom:80px;">
+		<%= render 'layouts/header' %>
+		<%= yield %>
+	</div>
+	<%= render 'layouts/footer' %>
+	
+</body>
+</html>

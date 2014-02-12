@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="span12">
+
+		<div class="inner-box">
+			<h1>Pacotes</h1>
+			<%= link_to 'Novo Pacote', new_pack_path, class: 'btn btn-info pull-right', style: "margin-bottom:10px" %>
+		
+
+	<table class="table table-condensed">
+  		<tr>
+  			<th>Imagem</th>
+    		<th>Categoria</th>
+    		<th>Em promocao?</th>
+    		<th>Estrela?</th>
+    		<!--<th>International?</th>-->
+    		<th>Opcoes</th>
+  		</tr>
+	<% @packs.each do |pack| %>
+  		<tr class=<%='error' unless pack.category_id>0%>>
+  			<td><%= link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' if pack.image? %></td>
+    		<td><%= get_category(pack.category_id) %></td>
+    		<td><%= pack.promo %></td>
+    		<td><%= pack.star %></td>
+    		<!--<td><%= pack.international %></td>-->
+    		<td><%= link_to 'Editar', edit_pack_path(pack) %>
+    		| <%= link_to 'Apagar', pack, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+  		</tr>
+	<% end %>
+	</table>
+		</div>
+	</div>
+</div>

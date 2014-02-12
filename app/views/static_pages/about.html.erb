@@ -1,0 +1,19 @@
+<% provide(:title, 'Quem Somos') %>
+<div class="row">
+	<div class="span12">
+		<div class="about">
+			<h3>Quem Somos</h3>
+			<p><%=profile.about%></p>
+
+			<h3>Nossa Missão</h3>
+			<p><%=profile.mission%></p>
+
+			<h3>Nossos Valores</h3>
+			<ul>
+				<%profile.pillars.split(/,/).each do |v|%>
+					<li><%=v%></li>
+				<%end%>
+			</ul>
+		</div>
+	</div>
+</div>

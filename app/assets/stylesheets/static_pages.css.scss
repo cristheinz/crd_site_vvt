@@ -1,0 +1,118 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* universal */
+html {
+  //overflow-y: scroll;
+}
+body {
+  background-color: rgb(235, 235, 235);
+  //padding-top: 0px;
+  //padding-bottom: 0px;
+}
+footer {
+  //background-color: #3366FF;
+  //background-color: #E5E4E2;
+  background-color: #FEFCFF;
+  //position: fixed;
+  //bottom: 0px;
+  //padding-left: 50px;
+  //margin-left: 0px;
+  //margin-top: 0px;
+  padding-top: 45px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+footer a {
+  color: #555;
+}  
+footer a:hover { 
+  color: #222;
+}
+h3 {
+  background: rgb(27, 180, 232) url('icon.png') 10px no-repeat; 
+  color: white;
+  padding: 5px 60px;
+  font: italic normal normal 22px/1.3em 'open sans', sans-serif;
+}
+
+.page-title {
+  position: absolute;
+  width:100%;
+  padding-top: 7%;
+  //margin-left: 25%;
+  font-family: arial;
+  line-height: 0.5em;
+  letter-spacing: -2px;
+  font-size: 48px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.398438) 0px 1px 3px, rgba(0, 0, 0, 0.0742188) 0px 0px 30px;
+}
+.the-brand {
+  color: #ccc;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+.about p, .about li {
+  font: italic normal normal 22px/1.3em 'open sans', sans-serif;
+  color: rgb(0, 22, 255);
+  margin-right: 60px;
+  margin-left: 60px;
+}
+//@media (max-width: 979px) {}
+@media (max-width: 767px) {
+    .about p, .about li {
+      font: italic normal normal 18px/1.3em 'open sans', sans-serif;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+}
+
+.inner-box{
+  margin-left: 5px; 
+  margin-right: 5px;
+}
+#msg0{
+  font: normal normal normal 18px/1.3em 'open sans', sans-serif;
+  //padding-bottom: 15px;
+  
+}
+#msg1{
+  font: normal normal normal 18px/1.3em 'open sans', sans-serif;
+  color: rgb(226, 214, 186);
+  //text-align: center;
+  //padding-right: 15px;
+  
+}
+#msg2{
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 25px;
+  //color: rgb(226, 214, 186);
+  color: rgb(27, 180, 232)
+}
+.transparent-box {
+  background-color: rgba(33, 39, 43, 0.870588);
+  position: absolute;
+  padding-right: 35px;
+  padding-left: 35px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  z-index:1;
+  //font: italic normal normal 18px/1.3em 'open sans', sans-serif;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 767px) {
+    .transparent-box {
+      //margin-top: 0px;
+      position: relative;
+    }
+}
+.text {
+  font: italic normal normal 18px/1.3em 'open sans', sans-serif;
+  text-align: center;
+  padding-right: 20px;
+}

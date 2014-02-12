@@ -1,0 +1,44 @@
+<%= form_for(@pack) do |f| %>
+  <% if @pack.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pack.errors.count, "error") %> prohibited this pack from being saved:</h2>
+
+      <ul>
+      <% @pack.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :category_id do %>
+    	Categoria: <!--<%= f.text_field :category_id %>-->
+    	<%= f.select(:category_id, options_for_select(category_map, @pack.category_id ||=0) )%>
+    <%end%>
+
+  	<%= f.label :promo do %>
+        <%= f.check_box :promo %> Em promocao
+    <%end%>
+
+    <%= f.label :star do %>
+    	<%= f.check_box :star %> Estrela
+    <%end%>
+
+	<!--
+    <%= f.label :international do %>
+    	<%= f.check_box :international %> Internacional
+    <%end%>-->
+
+    <%= f.label :pdf do %>
+    	pdf: <%= link_to @pack.pdf.to_s, @pack.pdf.to_s if @pack.pdf? %>
+    	<%= f.file_field :pdf %>
+    <%end%>
+
+    <%= f.label :image do %>
+    	Imagem: <%= f.file_field :image %>
+    	<%= image_tag @pack.image.to_s if @pack.image? %><br />
+    <%end%>
+
+    <%= f.submit "Gravar", class:"btn btn-info" %>
+    <%= link_to 'Cancelar', packs_path, class:"btn" %>
+<% end %>

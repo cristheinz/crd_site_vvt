@@ -1,0 +1,107 @@
+<% provide(:title, 'Bem-Vindo!') %>
+<div class="row">
+	<div class="span12">
+		<div id="myCarousel" class="carousel slide">
+			<div class="transparent-box">
+				<%= render 'message' %>
+			</div>
+			<div class="carousel-inner">
+				<% x=0%>
+				<% @images.each do |i| %>
+					<div class="item <%= "active" if x<1 %>">
+						<%= image_tag(i.to_s, class:'container') %>
+						<%x=1%>
+					</div>
+				<%end%>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span6">
+				<h3>Nao Perca esta Viagem</h3>
+				<div class="inner-box">
+				<div class="row-fluid">
+					<% @pl.each do |pack| %>
+						<div class="span4">
+							<%= link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
+						</div>
+					<%end%>
+				</div>
+				</div>
+			</div>
+			<div class="span6">
+				<h3>Pacotes em Promocao</h3>
+				<div class="inner-box">
+				<div class="row-fluid">
+					<% @pr.each do |pack| %>
+						<div class="span4">
+							<%= link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
+						</div>
+					<%end%>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<h3>Nao Perca estes Eventos</h3>
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div id="myCarousel2" class="carousel slide">
+							<div class="carousel-inner">
+        						<div class="item active">
+            						<div class="span4"><%= link_to image_tag(@pb[0].image.to_s), @pb[0].pdf.to_s if @pb[0] %></div>
+            						<div class="span4"><%= link_to image_tag(@pb[1].image.to_s), @pb[1].pdf.to_s if @pb[1] %></div>
+            						<div class="span4"><%= link_to image_tag(@pb[2].image.to_s), @pb[2].pdf.to_s if @pb[2] %></div>
+				            	</div>
+				            	<%if @pb.size>3%>
+            					<div class="item">
+            						<div class="span4"><%= link_to image_tag(@pb[3].image.to_s), @pb[3].pdf.to_s if @pb[3] %></div>
+        	    					<div class="span4"><%= link_to image_tag(@pb[4].image.to_s), @pb[4].pdf.to_s if @pb[4] %></div>
+    	        					<div class="span4"><%= link_to image_tag(@pb[5].image.to_s), @pb[5].pdf.to_s if @pb[5] %></div>
+					            </div>
+					            <%end%>
+				            	<%if @pb.size>6%>
+            					<div class="item">
+            						<div class="span4"><%= link_to image_tag(@pb[6].image.to_s), @pb[6].pdf.to_s if @pb[6] %></div>
+        	    					<div class="span4"><%= link_to image_tag(@pb[7].image.to_s), @pb[7].pdf.to_s if @pb[7] %></div>
+    	        					<div class="span4"><%= link_to image_tag(@pb[8].image.to_s), @pb[8].pdf.to_s if @pb[8] %></div>
+					            </div>
+					            <%end%>
+				            </div>
+				            
+					 		<!-- Carousel nav-->
+							<a class="carousel-control left" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
+							<a class="carousel-control right" href="#myCarousel2" data-slide="next">&rsaquo;</a>
+
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			<div class="span6">
+				<h3>Siga-nos no Facebook</h3>
+				<center><%=render 'layouts/fbbox'%></center>
+			</div>
+
+			<div class="span6 offset1 text">
+			<p>veja <%= link_to 'aqui', 'http://www.touroperator.com.br/portal/stz04/default.asp?ids=MMCAYY'%> mais ofertas de viagem que temos para voce...</p>			
+			</div>
+			
+		</div>
+	</div>
+</div>
+<script>
+$('#myCarousel').carousel({
+	interval: 3000
+})
+$('.span4 img').mouseover(function(){
+	$(this).css("opacity","0.6");
+	$(this).css("filter","alpha(opacity=60)");
+})
+$('.span4 img').mouseout(function(){
+	$(this).css("opacity","1");
+	$(this).css("filter","alpha(opacity=100)");
+})
+</script>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="span12">
+		<div class="inner-box">
+<p>
+  <b>Category ID:</b>
+  <%= get_category(@pack.category_id) %>
+</p>
+
+<p>
+  <b>Promo:</b>
+  <%= @pack.promo %>
+</p>
+
+<p>
+  <b>Star:</b>
+  <%= @pack.star %>
+</p>
+
+<!--
+<p>
+  <b>International:</b>
+  <%= @pack.international %>
+</p>
+-->
+
+<p>
+	<b>pdf:</b>
+	<%= link_to @pack.pdf.to_s, @pack.pdf.to_s if @pack.pdf? %>
+</p>
+
+<p>
+	<b>thumb:</b>
+	<%= image_tag @pack.image.to_s if @pack.image? %>
+</p>
+
+<%= link_to 'Editar', edit_pack_path(@pack), class: "btn btn-info" %>
+<%= link_to 'Cancelar', packs_path, class: "btn" %>
+		</div>
+	</div>
+</div>

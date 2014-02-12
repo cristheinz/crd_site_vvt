@@ -1,0 +1,125 @@
+<% provide(:title, 'Informacoes uteis') %>
+<div class="row">
+	<div class="span12">
+		<h3>Informacoes uteis</h3>
+		<div class="inner-box">
+
+
+
+
+			<div class="accordion" id="accordion2">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
+							<div class="row-fluid">
+								<%= image_tag 'thumb4.png', class:'pull-right'%>
+								<strong>Consulados e embaixadas</strong>
+							</div>
+						</a>
+					</div>
+					<div id="collapse1" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<ul class="nav nav-pills nav-stacked"> 
+								<li><%= link_to 'Embaixadas extrangeiras no Brasil', 'http://www.itamaraty.gov.br/cerimonial/corpo-diplomatico/lista'%></li>
+								<li><%= link_to 'Consulados extrangeiros no Brasil', 'http://www.itamaraty.gov.br/servicos-do-itamaraty/enderecos-de-consulados-estrangeiros-no-brasil'%></li>
+								<li><%= link_to 'Representacoes do Brasil no exterior', 'http://www.itamaraty.gov.br/o-ministerio/o-brasil-no-exterior'%></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+							<div class="row-fluid">
+								<%= image_tag 'thumb5.png', class:'pull-right' %>
+								<strong>Alfandega</strong>
+							</div>
+						</a>
+					</div>
+					<div id="collapse2" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<%= render 'alfandega'%>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+							<div class="row-fluid">
+								<%= image_tag 'thumb6.png', class:'pull-right'%>
+								<strong>Bagagem de mao</strong>
+							</div>
+						</a>
+					</div>
+					<div id="collapse3" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<%= image_tag 'bagagem.jpg'%>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+							<div class="row-fluid">
+								<%= image_tag 'thumb7.png', class:'pull-right' %>
+								<strong>Transporte de animais</strong>
+							</div>
+						</a>
+					</div>
+					<div id="collapse4" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<%= render 'animais'%>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
+							<div class="row-fluid">
+								<%= image_tag 'thumb8.png', class:'pull-right' %>
+								<strong>Passaportes</strong>
+							</div>
+						</a>
+					</div>
+					<div id="collapse5" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<%= render 'passaporte'%>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<h3>Links uteis</h3>
+		<div class="inner-box">
+			<ul class="nav nav-pills">
+  				<li class="span2">
+    				<div class="thumbnail">
+      					<%= image_tag 'thumb0.png'%>
+      					<strong><%= link_to 'Consulta de voos', 'http://www.infraero.gov.br/voos/index.aspx'%></strong>
+    				</div>
+  				</li>
+  				<li class="span2">
+    				<div class="thumbnail">
+      					<%= image_tag 'thumb1.png' %>
+      					<strong><%= link_to 'Fuso horario', 'http://www2.tursites.com.br/cache/mapa_fuso2.htm'%></strong>
+    				</div>
+  				</li>
+  				<li class="span2">
+    				<div class="thumbnail">
+      					<%= image_tag 'thumb2.png'%>
+      					<strong><%= link_to 'Visto americano', 'http://portuguese.brazil.usembassy.gov/pt/visas.html'%></strong>
+    				</div>
+  				</li>
+  				<li class="span2">
+    				<div class="thumbnail">
+      					<%= image_tag 'thumb3.png'%>
+      					<strong><%= link_to 'Comunidade europeia', 'http://europa.eu/index_pt.htm'%></strong>
+    				</div>
+  				</li>
+			</ul>
+		</div>
+
+	</div>
+</div>

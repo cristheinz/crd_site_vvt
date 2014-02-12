@@ -1,0 +1,66 @@
+<% provide(:title, 'Pacotes') %>
+<div class="row">
+	<div class="span12">
+		<h3>Os nossos pacotes</h3>
+		
+		<div class="inner-box" style="padding-bottom: 400px;">
+		<div class="tabbable"> <!-- Only required for left/right tabs -->
+  			<ul class="nav nav-tabs">
+    			<li class="active"><a href="#tab1" data-toggle="tab">Todos</a></li>
+    			<li><a href="#tab2" data-toggle="tab">Nacionais</a></li>
+    			<li><a href="#tab3" data-toggle="tab">Internacionais</a></li>
+    			<li><a href="#tab4" data-toggle="tab">Eventos</a></li>
+    			<% if @packs.where('category_id=?',4).size>0%>
+    				<li><a href="#tab5" data-toggle="tab">Outros</a></li>
+    			<%end%>
+  			</ul>
+  			<div class="tab-content">
+    			<div class="tab-pane active" id="tab1">
+					<% @packs.each do |pack| %>
+						<%=link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
+					<%end%>
+    			</div>
+    			<div class="tab-pane" id="tab2">
+					<% @packs.each do |pack| %>
+						<%if pack.category_id==1%>
+							<%=link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
+						<%end%>
+					<%end%>
+    			</div>
+    			<div class="tab-pane" id="tab3">
+					<% @packs.each do |pack| %>
+						<%if pack.category_id==2%>
+							<%=link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
+						<%end%>
+					<%end%>
+    			</div>
+    			<div class="tab-pane" id="tab4">
+					<% @packs.each do |pack| %>
+						<%if pack.category_id==3%>
+							<%=link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
+						<%end%>
+					<%end%>
+    			</div>
+    			<div class="tab-pane" id="tab5">
+					<% @packs.each do |pack| %>
+						<%if pack.category_id==4%>
+							<%=link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
+						<%end%>
+					<%end%>
+    			</div>
+  			</div>
+		</div>
+			
+		</div>
+	</div>
+</div>
+<script>
+$('a img').mouseover(function(){
+	$(this).css("opacity","0.6");
+	$(this).css("filter","alpha(opacity=60)");
+})
+$('a img').mouseout(function(){
+	$(this).css("opacity","1");
+	$(this).css("filter","alpha(opacity=100)");
+})
+</script>
