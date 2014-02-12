@@ -1,17 +1,17 @@
-<% provide(:title, 'Pacotes') %>
+<% provide(:title, t(:packages)) %>
 <div class="row">
 	<div class="span12">
-		<h3>Os nossos pacotes</h3>
+		<h3><%=t(:packages_title)%></h3>
 		
 		<div class="inner-box" style="padding-bottom: 400px;">
 		<div class="tabbable"> <!-- Only required for left/right tabs -->
   			<ul class="nav nav-tabs">
-    			<li class="active"><a href="#tab1" data-toggle="tab">Todos</a></li>
-    			<li><a href="#tab2" data-toggle="tab">Nacionais</a></li>
-    			<li><a href="#tab3" data-toggle="tab">Internacionais</a></li>
-    			<li><a href="#tab4" data-toggle="tab">Eventos</a></li>
+    			<li class="active"><a href="#tab1" data-toggle="tab"><%=t(:all)%></a></li>
+    			<li><a href="#tab2" data-toggle="tab"><%=t(:national)%></a></li>
+    			<li><a href="#tab3" data-toggle="tab"><%=t(:international)%></a></li>
+    			<li><a href="#tab4" data-toggle="tab"><%=t(:events)%></a></li>
     			<% if @packs.where('category_id=?',4).size>0%>
-    				<li><a href="#tab5" data-toggle="tab">Outros</a></li>
+    				<li><a href="#tab5" data-toggle="tab"><%=t(:others)%></a></li>
     			<%end%>
   			</ul>
   			<div class="tab-content">
@@ -54,6 +54,15 @@
 		</div>
 	</div>
 </div>
+<div class="row">
+	<div class="span12">
+		<div class="inner-box">
+			<span class="muted"><%=t(:note)%></span>
+		</div>
+	</div>
+</div>
+
+
 <script>
 $('a img').mouseover(function(){
 	$(this).css("opacity","0.6");

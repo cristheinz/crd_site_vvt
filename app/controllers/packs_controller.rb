@@ -45,7 +45,7 @@ class PacksController < ApplicationController
 
     respond_to do |format|
       if @pack.save
-        format.html { redirect_to @pack, notice: 'Pack was successfully created.' }
+        format.html { redirect_to packs_path }
         format.json { render json: @pack, status: :created, location: @pack }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class PacksController < ApplicationController
 
     respond_to do |format|
       if @pack.update_attributes(params[:pack])
-        format.html { redirect_to packs_path, notice: 'Pack was successfully updated.' }
+        format.html { redirect_to packs_path }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -86,7 +86,7 @@ class PacksController < ApplicationController
   private
     def is_admin
       unless signed_in?
-        redirect_to root_path, notice: t(":permission_denied") 
+        redirect_to root_path 
       end
     end
 end

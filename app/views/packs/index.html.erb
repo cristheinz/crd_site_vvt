@@ -1,29 +1,33 @@
+<% provide(:title, t(:administration)) %>
 <div class="row">
 	<div class="span12">
 
 		<div class="inner-box">
-			<h1>Pacotes</h1>
-			<%= link_to 'Novo Pacote', new_pack_path, class: 'btn btn-info pull-right', style: "margin-bottom:10px" %>
-		
+			<h1><%=t(:packages)%></h1>
+			
+			<div class="form-actions">
+				<%= link_to t(:new_pack), new_pack_path, class: 'btn btn-info pull-right' %>
+			</div>
+			
 
 	<table class="table table-condensed">
   		<tr>
-  			<th>Imagem</th>
-    		<th>Categoria</th>
-    		<th>Em promocao?</th>
-    		<th>Estrela?</th>
+  			<th><%=t(:image)%></th>
+    		<th><%=t(:category)%></th>
+    		<th><%=t(:promo)%></th>
+    		<th><%=t(:star)%></th>
     		<!--<th>International?</th>-->
-    		<th>Opcoes</th>
+    		<th><%=t(:options)%></th>
   		</tr>
 	<% @packs.each do |pack| %>
-  		<tr class=<%='error' unless pack.category_id>0%>>
-  			<td><%= link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' if pack.image? %></td>
+  		<tr class=<%= row_status(pack)%>>
+  			<td><%= link_to image_tag(pack.image.to_s, class: 'span2'), pack.pdf.to_s, target: '_blank' if pack.image? %></td>
     		<td><%= get_category(pack.category_id) %></td>
-    		<td><%= pack.promo %></td>
-    		<td><%= pack.star %></td>
+    		<td><i class="<%= pack.promo ? 'icon-ok' : 'icon-remove' %>"></i></td>
+    		<td><i class="<%= pack.star ? 'icon-ok' : 'icon-remove' %>"></i></td>
     		<!--<td><%= pack.international %></td>-->
-    		<td><%= link_to 'Editar', edit_pack_path(pack) %>
-    		| <%= link_to 'Apagar', pack, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+    		<td><%= link_to t(:edit), edit_pack_path(pack) %>
+    		| <%= link_to t(:delete), pack, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
   		</tr>
 	<% end %>
 	</table>

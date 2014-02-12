@@ -17,23 +17,23 @@
       <nav>
         <ul class="nav pull-right">
         	<%if signed_in?%>
-        		<li><%= link_to 'Perfil', edit_profile_path(1)%></li>
+        		<li><%= link_to t(:profile), edit_profile_path(1)%></li>
         		<li class="divider-vertical"></li>
-				<li><%= link_to 'Pacotes', packs_path%></li>
+				<li><%= link_to t(:packages), packs_path%></li>
           		<li class="divider-vertical"></li>
 				<li><%= link_to "Sair", signout_path, method: "delete"%></li>
 			<%else%>
-          		<li><%= link_to "Inicio", root_path %></li>
+          		<li><%= link_to t(:home), root_path %></li>
           		<li class="divider-vertical"></li>
-          		<li><%= link_to "Pacotes", packages_path %></li>
+          		<li><%= link_to t(:packages), packages_path %></li>
           		<li class="divider-vertical"></li>
-          		<li><%= link_to "Informacoes Uteis", info_path %></li>
+          		<li><%= link_to t(:info), info_path %></li>
           		<li class="divider-vertical"></li>
-          		<li><%= link_to "Noticias", news_path %></li>
+          		<li><%= link_to t(:news), news_path %></li>
           		<li class="divider-vertical"></li>
-          		<li><%= link_to "Quem Somos", about_path %></li>
+          		<li><%= link_to t(:about), about_path %></li>
           		<li class="divider-vertical"></li>
-          		<li><%= link_to "Contatos", contact_path %></li>
+          		<li><%= link_to t(:contacts), contact_path %></li>
           	<%end%>
           	<li><a></a></li>
         </ul>

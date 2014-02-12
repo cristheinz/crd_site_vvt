@@ -1,5 +1,5 @@
 <div class="row-fluid">
-<%= form_for(@profile) do |f| %>
+<%= form_for(@profile, class: "form-horizontal") do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this pack from being saved:</h2>
@@ -11,63 +11,100 @@
       </ul>
     </div>
   <% end %>
+  
+  	<legend><%=t(:edit_profile)%></legend>
 
-    <%= f.label :name, 'Perfil' %>
-   	<%= f.text_field :name, class: 'span12', disabled: 'true' %>
+	<div class="control-group">
+    	<%= f.label :name, "#{t(:profile)}:" %>
+   		<%= f.text_field :name, class: 'span12', disabled: 'true' %>
+   	</div>
    	
-    <%= f.label :title, 'Nome'%>
-   	<%= f.text_field :title, class: 'span12' %>
+   	<div class="control-group">
+    	<%= f.label :title, "#{t(:name)}:"%>
+   		<%= f.text_field :title, class: 'span12' %>
+   	</div>
+   	
+	<div class="control-group">
+    	<%= f.label :keywords, "#{t(:keywords)}:"%>
+   		<%= f.text_field :keywords, class: 'span12' %>
+   	</div>
 
-    <%= f.label :keywords, 'Palavras-chave'%>
-   	<%= f.text_field :keywords, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :description, "#{t(:description)}:"%>
+   		<%= f.text_field :description, class: 'span12' %>
+   	</div>
 
-    <%= f.label :description, 'Descricao'%>
-   	<%= f.text_field :description, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :about, "#{t(:about)}:" %>
+   		<%= f.text_area :about, rows: 3, class: 'span12' %>
+   	</div>
 
-    <%= f.label :about, 'Quem somos' %>
-   	<%= f.text_area :about, rows: 3, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :mission, "#{t(:mission)}:" %>
+   		<%= f.text_area :mission, rows: 3, class: 'span12' %>
+   	</div>
 
-    <%= f.label :mission, 'Missao' %>
-   	<%= f.text_area :mission, rows: 3, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :pillars, "#{t(:pillars)}:"%>
+   		<%= f.text_field :pillars, class: 'span12' %>
+   	</div>
 
-    <%= f.label :pillars, 'Valores'%>
-   	<%= f.text_field :pillars, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :addr1, "#{t(:addr)}:" %>
+   		<%= f.text_field :addr1, class: 'span12' %>
+   	</div>
 
-    <%= f.label :addr1, 'Endereco' %>
-   	<%= f.text_field :addr1, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :addr2, "#{t(:location)}:"%>
+   		<%= f.text_field :addr2, class: 'span12' %>
+   	</div>
 
-    <%= f.label :addr2, 'Endereco cont.'%>
-   	<%= f.text_field :addr2, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :email, 'Email:'%>
+   		<%= f.text_field :email, class: 'span12' %>
+   	</div>
 
-    <%= f.label :email%>
-   	<%= f.text_field :email, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :tel1, "#{t(:phone)}:" %>
+   		<%= f.text_field :tel1, class: 'span12' %>
+   	</div>
 
-    <%= f.label :tel1, 'Telefone' %>
-   	<%= f.text_field :tel1, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :tel2, "#{t(:phone)}:"%>
+   		<%= f.text_field :tel2, class: 'span12' %>
+   	</div>
 
-    <%= f.label :tel2, 'Telefone alternativo'%>
-   	<%= f.text_field :tel2, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :tel3, "#{t(:emergency)}:"%>
+   		<%= f.text_field :tel3, class: 'span12' %>
+   	</div>
 
-    <%= f.label :tel3, 'Telefone plantao'%>
-   	<%= f.text_field :tel3, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :att, "#{t(:att)}:" %>
+   		<%= f.text_field :att, class: 'span12' %>
+   	</div>
 
-    <%= f.label :att, 'Horario atendimento' %>
-   	<%= f.text_field :att, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :msg1, "#{t(:welcome_message)}:" %>
+   		<%= f.text_area :msg1, rows: 3, class: 'span12' %>
+   	</div>
 
-    <%= f.label :msg1, 'Mensagem de boas-vondas' %>
-   	<%= f.text_area :msg1, rows: 3, class: 'span12' %>
-
-    <%= f.label :msg2, 'Mensagem' %>
-   	<%= f.text_area :msg2, rows: 3, class: 'span12' %>
+	<div class="control-group">
+    	<%= f.label :msg2, "#{t(:message)}:" %>
+   		<%= f.text_area :msg2, rows: 3, class: 'span12' %>
+   	</div>
     
     
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'span12' %>
+	<div class="control-group error">
+    	<%= f.label :password, 'Password:' %>
+    	<%= f.password_field :password, class: 'span12' %>
 
-    <%= f.label :password_confirmation, "Confirmar Password" %>
-    <%= f.password_field :password_confirmation, class: 'span12' %>
+    	<%= f.label :password_confirmation, "#{t(:password_confirmation)}:" %>
+    	<%= f.password_field :password_confirmation, class: 'span12' %>
+   	</div>
 
-
-    <%= f.submit "Gravar", class:"btn btn-info" %>
+	<div class="form-actions">
+    	<%= f.submit t(:save), class:"btn btn-info" %>
+   	</div>
 <% end %>
 </div>

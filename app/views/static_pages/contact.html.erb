@@ -1,4 +1,4 @@
-<% provide(:title, 'Contatos') %>
+<% provide(:title, t(:contacts) ) %>
 <div class="row">
 	<div class="span12">
 	
@@ -9,10 +9,10 @@
 					<%=profile.addr1%><br/>
 					<%=profile.addr2%><br/>
 					<p>
-						<abbr title="Horario de Atendimento">A:</abbr> <%=profile.att %><br/>
-						<abbr title="Telefone">T:</abbr> <%=profile.tel1%> <%= " / #{profile.tel2}" if profile.tel2 %><br/>
-						<abbr title="Plantao">P:</abbr> <%=profile.tel3%><br/>
-						<abbr title="E-mail">E:</abbr> <a href="mailto:#"><%=profile.email%></a><br/>
+						<abbr title="<%=t(:att)%>">A:</abbr> <%=profile.att %><br/>
+						<abbr title="<%=t(:phone)%>">T:</abbr> <%=profile.tel1%> <%= " / #{profile.tel2}" if profile.tel2 %><br/>
+						<abbr title="<%=t(:emergency)%>">P:</abbr> <%=profile.tel3%><br/>
+						<abbr title="Email">E:</abbr> <a href="mailto:#"><%=profile.email%></a><br/>
 					</p>
 				</address>
 			</center>
@@ -25,13 +25,13 @@
 		
 		<div class="row">
 			<div class="span6">
-				<h3>Contato</h3>
+				<h3><%=t(:contact)%></h3>
 				<div class="inner-box">
 				<%= form_for(:visitor, url: contact_path, class: '') do |f| %>
-					<%= f.text_field :name, placeholder: "Nome", class: 'span5' %>
+					<%= f.text_field :name, placeholder: t(:name), class: 'span5' %>
 					<%= f.text_field :email, placeholder: "Email", class: 'span5' %>
-					<%= f.text_area :message, placeholder: "Mensagem...", rows: 5, class: 'span5' %>
-  					<%= f.submit "Enviar", class: "btn btn-large btn btn btn-info" %>
+					<%= f.text_area :message, placeholder: t(:message), rows: 5, class: 'span5' %>
+  					<%= f.submit t(:send), class: "btn btn-large btn btn btn-info" %>
 				<% end %>
 				<% flash.each do |key, value| %>
 					<%= content_tag(:div, value, class: "alert alert-#{key}") %>
@@ -40,7 +40,7 @@
 			</div>
 
 			<div class="span6">
-				<h3>Localizacao</h3>
+				<h3><%=t(:location)%></h3>
 				<div class="inner-box">
 				<!--http://stackoverflow.com/questions/903457/ruby-on-rails-gem-for-google-map-integration-->
 				<%= image_tag('http://maps.google.com/maps/api/staticmap?size=512x255&maptype=roadmap&zoom=15&sensor=false&markers=color:red|label:Vou Viajar Agencia de Turismo|Rua Via Veneto, Santa Felicidade - Curitiba/PR - Brasil', class:'container') %>

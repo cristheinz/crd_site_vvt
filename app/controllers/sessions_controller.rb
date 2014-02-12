@@ -12,12 +12,10 @@ class SessionsController < ApplicationController
     end 
     
     if profile && profile.authenticate(params[:session][:password])
-    #if params[:session][:password]=="aaa"
-      #sign_in 'admin'
       sign_in profile
       redirect_to packs_path
     else
-      flash.now[:error] = 'Password invalida'
+      flash.now[:error] = t(:invalid_password)
       render 'new'
     end
   end

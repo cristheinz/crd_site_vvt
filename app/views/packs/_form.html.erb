@@ -1,4 +1,4 @@
-<%= form_for(@pack) do |f| %>
+<%= form_for(@pack, class: "form-horizontal") do |f| %>
   <% if @pack.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pack.errors.count, "error") %> prohibited this pack from being saved:</h2>
@@ -10,35 +10,41 @@
       </ul>
     </div>
   <% end %>
+  
+	<div class="control-group">
+    	<%= f.label :category_id, "#{t(:category)}:" %>
+   		<%= f.select(:category_id, options_for_select(category_map, @pack.category_id ||=0) )%>
+   	</div>
 
-    <%= f.label :category_id do %>
-    	Categoria: <!--<%= f.text_field :category_id %>-->
-    	<%= f.select(:category_id, options_for_select(category_map, @pack.category_id ||=0) )%>
-    <%end%>
-
-  	<%= f.label :promo do %>
-        <%= f.check_box :promo %> Em promocao
-    <%end%>
-
-    <%= f.label :star do %>
-    	<%= f.check_box :star %> Estrela
-    <%end%>
+	<div class="control-group">
+		<%= f.label "#{t(:positioning)}:"%>
+  		<%= f.label :promo, class: "checkbox  inline" do %>
+        	<%= f.check_box :promo %><%= t(:promo)%>
+    	<%end%>
+	    <%= f.label :star, class: "checkbox  inline" do %>
+    		<%= f.check_box :star %><%= t(:star)%>
+    	<%end%>
+    </div>
 
 	<!--
     <%= f.label :international do %>
     	<%= f.check_box :international %> Internacional
     <%end%>-->
 
-    <%= f.label :pdf do %>
-    	pdf: <%= link_to @pack.pdf.to_s, @pack.pdf.to_s, target: '_blank' if @pack.pdf? %>
+	<div class="control-group">
+    	<%= f.label :pdf, 'Pdf:' %>
+		<%= link_to @pack.pdf.to_s, @pack.pdf.to_s, target: '_blank' if @pack.pdf? %><br/>
     	<%= f.file_field :pdf %>
-    <%end%>
+    </div>
 
-    <%= f.label :image do %>
-    	Imagem: <%= f.file_field :image %>
-    	<%= image_tag @pack.image.to_s if @pack.image? %><br />
-    <%end%>
+	<div class="control-group">
+    	<%= f.label :image, "#{t(:image)}:" %>
+    	<%= image_tag @pack.image.to_s if @pack.image? %><br/>
+    	<%= f.file_field :image %><br/>
+    </div>
 
-    <%= f.submit "Gravar", class:"btn btn-info" %>
-    <%= link_to 'Cancelar', packs_path, class:"btn" %>
+	<div class="form-actions">
+    	<%= f.submit t(:save), class:"btn btn-info" %>
+    	<%= link_to t(:cancel), packs_path, class:"btn" %>
+    </div>
 <% end %>

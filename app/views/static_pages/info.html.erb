@@ -1,7 +1,7 @@
-<% provide(:title, 'Informacoes uteis') %>
+<% provide(:title, t(:info)) %>
 <div class="row">
 	<div class="span12">
-		<h3>Informacoes uteis</h3>
+		<h3><%=t(:info)%></h3>
 		<div class="inner-box">
 
 			<div class="accordion" id="accordion2">
@@ -10,16 +10,16 @@
 						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
 							<div class="row-fluid">
 								<%= image_tag 'thumb4.png', class:'pull-right'%>
-								<strong>Consulados e embaixadas</strong>
+								<strong><%=t(:t4)%></strong>
 							</div>
 						</a>
 					</div>
 					<div id="collapse1" class="accordion-body collapse">
 						<div class="accordion-inner">
 							<ul class="nav nav-pills nav-stacked"> 
-								<li><%= link_to 'Embaixadas extrangeiras no Brasil', 'http://www.itamaraty.gov.br/cerimonial/corpo-diplomatico/lista', target: '_blank'%></li>
-								<li><%= link_to 'Consulados extrangeiros no Brasil', 'http://www.itamaraty.gov.br/servicos-do-itamaraty/enderecos-de-consulados-estrangeiros-no-brasil', target: '_blank'%></li>
-								<li><%= link_to 'Representacoes do Brasil no exterior', 'http://www.itamaraty.gov.br/o-ministerio/o-brasil-no-exterior', target: '_blank'%></li>
+								<li><%= link_to t(:l0), 'http://www.itamaraty.gov.br/cerimonial/corpo-diplomatico/lista', target: '_blank'%></li>
+								<li><%= link_to t(:l1), 'http://www.itamaraty.gov.br/servicos-do-itamaraty/enderecos-de-consulados-estrangeiros-no-brasil', target: '_blank'%></li>
+								<li><%= link_to t(:l2), 'http://www.itamaraty.gov.br/o-ministerio/o-brasil-no-exterior', target: '_blank'%></li>
 							</ul>
 						</div>
 					</div>
@@ -29,7 +29,7 @@
 						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
 							<div class="row-fluid">
 								<%= image_tag 'thumb5.png', class:'pull-right' %>
-								<strong>Alfandega</strong>
+								<strong><%=t(:t5)%></strong>
 							</div>
 						</a>
 					</div>
@@ -44,7 +44,7 @@
 						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
 							<div class="row-fluid">
 								<%= image_tag 'thumb6.png', class:'pull-right'%>
-								<strong>Bagagem de mao</strong>
+								<strong><%=t(:t6)%></strong>
 							</div>
 						</a>
 					</div>
@@ -59,7 +59,7 @@
 						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
 							<div class="row-fluid">
 								<%= image_tag 'thumb7.png', class:'pull-right' %>
-								<strong>Transporte de animais</strong>
+								<strong><%=t(:t7)%></strong>
 							</div>
 						</a>
 					</div>
@@ -74,7 +74,7 @@
 						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
 							<div class="row-fluid">
 								<%= image_tag 'thumb8.png', class:'pull-right' %>
-								<strong>Passaportes</strong>
+								<strong><%=t(:t8)%></strong>
 							</div>
 						</a>
 					</div>
@@ -88,31 +88,31 @@
 
 		</div>
 		
-		<h3>Links uteis</h3>
+		<h3><%=t(:links)%></h3>
 		<div class="inner-box">
 			<ul class="nav nav-pills">
   				<li class="span2">
     				<div class="thumbnail">
       					<%= image_tag 'thumb0.png'%>
-      					<strong><%= link_to 'Consulta de voos', 'http://www.infraero.gov.br/voos/index.aspx', target: '_blank'%></strong>
+      					<strong><%= link_to t(:t0), 'http://www.infraero.gov.br/voos/index.aspx', target: '_blank'%></strong>
     				</div>
   				</li>
   				<li class="span2">
     				<div class="thumbnail">
       					<%= image_tag 'thumb1.png' %>
-      					<strong><%= link_to 'Fuso horario', 'http://www2.tursites.com.br/cache/mapa_fuso2.htm', target: '_blank'%></strong>
+      					<strong><%= link_to t(:t1), 'http://www2.tursites.com.br/cache/mapa_fuso2.htm', target: '_blank'%></strong>
     				</div>
   				</li>
   				<li class="span2">
     				<div class="thumbnail">
       					<%= image_tag 'thumb2.png'%>
-      					<strong><%= link_to 'Visto americano', 'http://portuguese.brazil.usembassy.gov/pt/visas.html', target: '_blank'%></strong>
+      					<strong><%= link_to t(:t2), 'http://portuguese.brazil.usembassy.gov/pt/visas.html', target: '_blank'%></strong>
     				</div>
   				</li>
   				<li class="span2">
     				<div class="thumbnail">
       					<%= image_tag 'thumb3.png'%>
-      					<strong><%= link_to 'Comunidade europeia', 'http://europa.eu/index_pt.htm', target: '_blank'%></strong>
+      					<strong><%= link_to t(:t3), 'http://europa.eu/index_pt.htm', target: '_blank'%></strong>
     				</div>
   				</li>
 			</ul>

@@ -3,3 +3,4 @@ encoding//app/controllers/static_pages_controller.rb=UTF-8
 encoding//app/views/contact_mailer/feedback_email.html.erb=UTF-8
 encoding//app/views/static_pages/_message.html.erb=UTF-8
 encoding//app/views/static_pages/about.html.erb=UTF-8
+encoding//config/locales/pt.yml=UTF-8

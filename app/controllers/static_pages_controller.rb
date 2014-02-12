@@ -1,15 +1,13 @@
 class StaticPagesController < ApplicationController
   def home
-    #@profile= Profile.first
-    @images = ['img0.jpg','img1.jpg','img2.jpg']
-    
-    @pl=Pack.where('star = ? and category_id != ?', true, 0).take(3)
-    @pr=Pack.where('promo = ? and category_id != ?', true, 0).take(3)
-    @pb=Pack.where(category_id: 3).take(9)
+    @images = ['img0.jpg','img1.jpg','img2.jpg','img3.jpg','img4.jpg','img5.jpg','img6.jpg']
+    @pl=Pack.where('star = ? and category_id != ? and pdf!="" and image!=""', true, 0).take(3)
+    @pr=Pack.where('promo = ? and category_id != ? and pdf!="" and image!=""', true, 0).take(3)
+    @pb=Pack.where('category_id=? and pdf!="" and image!=""', 3).take(9)
   end
 
   def packages
-    @packs=Pack.where('category_id != ?', 0)
+    @packs=Pack.where('category_id != ? and pdf!="" and image!=""', 0)
   end
 
   def info
@@ -20,25 +18,19 @@ class StaticPagesController < ApplicationController
   end
 
   def about
-    #@profile= Profile.first
   end
 
   def contact
-    #@profile= Profile.first
-    #flash[:success] = "aaaaa".match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
     if params[:visitor]
-      #@name=params[:visitor][:name]
-      #@message=params[:visitor][:message]
       @email=params[:visitor][:email]
       if @email.to_s.match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
         ContactMailer.feedback_email(params[:visitor]).deliver
         ContactMailer.contact_email(params[:visitor]).deliver
-        flash[:success] = "Obrigado!"
+        flash[:success] = t(:thanks)
       else
-        flash[:error] = "Email invalido."
+        flash[:error] = t(:invalid_email)
       end
       redirect_to contact_path
-      #flash[:success] = "Obrigado: #{params[:visitor]} ---> #{@name}, #{@email}, #{@message}"
     end
   end
 end

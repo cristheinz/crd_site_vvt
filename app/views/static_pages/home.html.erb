@@ -1,4 +1,4 @@
-<% provide(:title, 'Bem-Vindo!') %>
+<% provide(:title, t(:welcome)) %>
 <div class="row">
 	<div class="span12">
 		<div id="myCarousel" class="carousel slide">
@@ -18,25 +18,21 @@
 
 		<div class="row">
 			<div class="span6">
-				<h3>Nao Perca esta Viagem</h3>
+				<h3><%=t(:star_products)%></h3>
 				<div class="inner-box">
-				<div class="row-fluid">
+					<div class="row-fluid">
 					<% @pl.each do |pack| %>
-						<div class="span4">
-							<%= link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
-						</div>
+						<%= link_to image_tag(pack.image.to_s, class: 'span4'), pack.pdf.to_s, target: '_blank' %>
 					<%end%>
-				</div>
+					</div>
 				</div>
 			</div>
 			<div class="span6">
-				<h3>Pacotes em Promocao</h3>
+				<h3><%=t(:promo_products)%></h3>
 				<div class="inner-box">
 				<div class="row-fluid">
 					<% @pr.each do |pack| %>
-						<div class="span4">
-							<%= link_to image_tag(pack.image.to_s), pack.pdf.to_s, target: '_blank' %>
-						</div>
+						<%= link_to image_tag(pack.image.to_s, class: 'span4'), pack.pdf.to_s, target: '_blank' %>
 					<%end%>
 				</div>
 				</div>
@@ -44,49 +40,58 @@
 		</div>
 		<div class="row">
 			<div class="span6">
-				<h3>Nao Perca estes Eventos</h3>
-				<div class="container-fluid">
+				<h3><%=t(:other_products)%></h3>
+				<div class="inner-box">
 					<div class="row-fluid">
+						<% if @pb.size>3%>
+
+
 						<div id="myCarousel2" class="carousel slide">
 							<div class="carousel-inner">
         						<div class="item active">
-            						<div class="span4"><%= link_to image_tag(@pb[0].image.to_s), @pb[0].pdf.to_s, target: '_blank' if @pb[0] %></div>
-            						<div class="span4"><%= link_to image_tag(@pb[1].image.to_s), @pb[1].pdf.to_s, target: '_blank' if @pb[1] %></div>
-            						<div class="span4"><%= link_to image_tag(@pb[2].image.to_s), @pb[2].pdf.to_s, target: '_blank' if @pb[2] %></div>
+            						<%= link_to image_tag(@pb[0].image.to_s, class: 'span4'), @pb[0].pdf.to_s, target: '_blank' if @pb[0] %>
+            						<%= link_to image_tag(@pb[1].image.to_s, class: 'span4'), @pb[1].pdf.to_s, target: '_blank' if @pb[1] %>
+            						<%= link_to image_tag(@pb[2].image.to_s, class: 'span4'), @pb[2].pdf.to_s, target: '_blank' if @pb[2] %>
 				            	</div>
-				            	<%if @pb.size>3%>
             					<div class="item">
-            						<div class="span4"><%= link_to image_tag(@pb[3].image.to_s), @pb[3].pdf.to_s, target: '_blank' if @pb[3] %></div>
-        	    					<div class="span4"><%= link_to image_tag(@pb[4].image.to_s), @pb[4].pdf.to_s, target: '_blank' if @pb[4] %></div>
-    	        					<div class="span4"><%= link_to image_tag(@pb[5].image.to_s), @pb[5].pdf.to_s, target: '_blank' if @pb[5] %></div>
+            						<%= link_to image_tag(@pb[3].image.to_s, class: 'span4'), @pb[3].pdf.to_s, target: '_blank' if @pb[3] %>
+        	    					<%= link_to image_tag(@pb[4].image.to_s, class: 'span4'), @pb[4].pdf.to_s, target: '_blank' if @pb[4] %>
+    	        					<%= link_to image_tag(@pb[5].image.to_s, class: 'span4'), @pb[5].pdf.to_s, target: '_blank' if @pb[5] %>
 					            </div>
-					            <%end%>
 				            	<%if @pb.size>6%>
             					<div class="item">
-            						<div class="span4"><%= link_to image_tag(@pb[6].image.to_s), @pb[6].pdf.to_s, target: '_blank' if @pb[6] %></div>
-        	    					<div class="span4"><%= link_to image_tag(@pb[7].image.to_s), @pb[7].pdf.to_s, target: '_blank' if @pb[7] %></div>
-    	        					<div class="span4"><%= link_to image_tag(@pb[8].image.to_s), @pb[8].pdf.to_s, target: '_blank' if @pb[8] %></div>
+            						<%= link_to image_tag(@pb[6].image.to_s, class: 'span4'), @pb[6].pdf.to_s, target: '_blank' if @pb[6] %>
+        	    					<%= link_to image_tag(@pb[7].image.to_s, class: 'span4'), @pb[7].pdf.to_s, target: '_blank' if @pb[7] %>
+    	        					<%= link_to image_tag(@pb[8].image.to_s, class: 'span4'), @pb[8].pdf.to_s, target: '_blank' if @pb[8] %>
 					            </div>
 					            <%end%>
 				            </div>
-				            
 					 		<!-- Carousel nav-->
 							<a class="carousel-control left" href="#myCarousel2" data-slide="prev">&lsaquo;</a>
 							<a class="carousel-control right" href="#myCarousel2" data-slide="next">&rsaquo;</a>
-
 						</div>
+
+
+
+						<%else%>
+							<% @pb.each do |pack| %>
+								<%= link_to image_tag(pack.image.to_s, class: 'span4'), pack.pdf.to_s, target: '_blank' %>
+							<%end%>
+						<%end%>
+						
+						
 						
 					</div>
 				</div>
 				
 			</div>
 			<div class="span6">
-				<h3>Siga-nos no Facebook</h3>
+				<h3><%=t(:follow_us)%></h3>
 				<center><%=render 'layouts/fbbox'%></center>
 			</div>
 
-			<div class="span6 offset1 text">
-			<p>veja <%= link_to 'aqui', 'http://www.touroperator.com.br/portal/stz04/default.asp?ids=MMCAYY', target: '_blank'%> mais ofertas de viagem que temos para voce...</p>			
+			<div class="span8 text">
+				<strong>veja <%= link_to 'aqui', 'http://www.touroperator.com.br/portal/stz04/default.asp?ids=MMCAYY', target: '_blank'%> mais ofertas de viagem que temos para voce...</strong>			
 			</div>
 			
 		</div>
@@ -96,11 +101,11 @@
 $('#myCarousel').carousel({
 	interval: 3000
 })
-$('.span4 img').mouseover(function(){
+$('a img').mouseover(function(){
 	$(this).css("opacity","0.6");
 	$(this).css("filter","alpha(opacity=60)");
 })
-$('.span4 img').mouseout(function(){
+$('a img').mouseout(function(){
 	$(this).css("opacity","1");
 	$(this).css("filter","alpha(opacity=100)");
 })

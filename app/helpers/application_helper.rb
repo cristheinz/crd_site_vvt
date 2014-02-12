@@ -11,11 +11,11 @@ module ApplicationHelper
   
   def category_map
     cmap=[
-        ["Nao publicado", 0],
-        ["Nacional",1],
-        ["Internacional",2],
-        ["Eventos", 3],
-        ["Outros",4]
+        [t(:not_publish), 0],
+        [t(:national),1],
+        [t(:international),2],
+        [t(:events), 3],
+        [t(:others),4]
       ]
     return cmap
   end
@@ -24,6 +24,18 @@ module ApplicationHelper
     category_map.each do |description, key|
       if key == id
         return description
+      end
+    end
+  end
+  
+  def row_status(pack)
+    if pack.category_id==0
+      'error'
+    else
+      if pack.image.to_s.empty? || pack.pdf.to_s.empty?
+        'error'
+      else
+        'success'
       end
     end
   end

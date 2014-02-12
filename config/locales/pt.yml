@@ -1,0 +1,74 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pt:
+  welcome: Bem-Vindo!
+  welcome_message: Mensagem de Boas-Vindas
+  thanks: Obrigado!
+  invalid_email: Email inválido.
+  invalid_password: Password inválida.
+  profile_saved: Os dados do perfil foram gravados com sucesso.
+  follow_us: Siga-nos no Facebook
+  password_confirmation: Confirmar Password
+  profile: Perfil
+  packages: Pacotes
+  packages_title: Os nossos pacotes
+  all: Todos
+  not_publish: Não publicado
+  national: Nacional
+  international: Internacional
+  events: Eventos
+  others: Outros
+  administration: Administração
+  sigin: Entrar
+  keywords: Palavras-chave
+  description: Descrição
+  addr: Endereço
+  edit_profile: Editando Perfil
+  edit_pack: Editando Pacote
+  new_pack: Novo Pacote
+  positioning: Posicionamento
+  save: Gravar
+  cancel: Cancelar
+  edit: Editar
+  delete: Apagar
+  image: Imagem
+  category: Categoria
+  promo: Promoção
+  star: Destaque
+  options: Opções
+  home: Início
+  info: Informações Úteis
+  news: Notícias
+  lnews: Última hora viajens
+  about: Quem Somos
+  contacts: Contatos
+  contact: Contato
+  star_products: Não Perca esta Viagem
+  promo_products: Pacotes em Promoção
+  other_products: Não Perca estes Eventos
+  links: Links Úteis
+  location: Localização
+  att: Horário de Atendimento
+  phone: Telefone
+  emergency: Plantão
+  name: Nome
+  message: Mensagem...
+  send: Enviar
+  mission: Nossa Missão
+  pillars: Nossos Valores
+  source: "fonte:"
+  more: ler mais
+  t4: Consulados e embaixadas
+  t5: Alfândega
+  t6: Bagagem de mão
+  t7: Transporte de animais
+  t8: Passaportes
+  t0: Consulta de vôos
+  t1: Fuso horário
+  t2: Visto americano
+  t3: Comunidade européia
+  l0: Embaixadas extrangeiras no Brasil
+  l1: Consulados extrangeiros no Brasil
+  l2: Representações do Brasil no exterior
+  note: Valores sujeitos a alteração sem prévio aviso e sujeito à disponibilidade de lugares.

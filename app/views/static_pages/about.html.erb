@@ -1,14 +1,14 @@
-<% provide(:title, 'Quem Somos') %>
+<% provide(:title, t(:about)) %>
 <div class="row">
 	<div class="span12">
 		<div class="about">
-			<h3>Quem Somos</h3>
+			<h3><%= t(:about)%></h3>
 			<p><%=profile.about%></p>
 
-			<h3>Nossa Missão</h3>
+			<h3><%= t(:mission)%></h3>
 			<p><%=profile.mission%></p>
 
-			<h3>Nossos Valores</h3>
+			<h3><%= t(:pillars)%></h3>
 			<ul>
 				<%profile.pillars.split(/,/).each do |v|%>
 					<li><%=v%></li>
