@@ -93,6 +93,11 @@
     	<%= f.label :msg2, "#{t(:message)}:" %>
    		<%= f.text_area :msg2, rows: 3, class: 'span12' %>
    	</div>
+
+	<div class="control-group">
+    	<%= f.label :rss, "RSS URL:" %>
+   		<%= f.text_field :rss, class: 'span12', placeholder: default_rss %>
+   	</div>
     
     
 	<div class="control-group error">

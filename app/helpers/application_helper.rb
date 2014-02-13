@@ -44,4 +44,8 @@ module ApplicationHelper
     Profile.first
   end
   
+  def default_rss
+    'http://vidaeestilo.terra.com.br/rss/Controller?channelid=ddd26e40c5234310VgnVCM20000099f154d0RCRD&ctName=atomo-noticia&lg=pt-br'
+  end
+  
 end

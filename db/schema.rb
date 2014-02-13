@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140212091015) do
+ActiveRecord::Schema.define(:version => 20140213093020) do
 
   create_table "packs", :force => true do |t|
     t.integer  "category_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20140212091015) do
     t.string   "password_digest"
     t.string   "keywords"
     t.string   "description"
+    t.string   "rss"
   end
 
 end
