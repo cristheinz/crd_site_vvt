@@ -14,7 +14,12 @@ class StaticPagesController < ApplicationController
   end
 
   def news
-    @feed = Feedzirra::Feed.fetch_and_parse("http://vidaeestilo.terra.com.br/rss/Controller?channelid=ddd26e40c5234310VgnVCM20000099f154d0RCRD&ctName=atomo-noticia&lg=pt-br")
+    #profile=Profile.first
+    #if profile && !profile.rss.empty?
+    #  @feed = Feedzirra::Feed.fetch_and_parse(profile.rss)
+    #else
+      @feed = Feedzirra::Feed.fetch_and_parse("http://vidaeestilo.terra.com.br/rss/Controller?channelid=ddd26e40c5234310VgnVCM20000099f154d0RCRD&ctName=atomo-noticia&lg=pt-br")
+    #end
   end
 
   def about

@@ -4,12 +4,6 @@ class SessionsController < ApplicationController
 
   def create
     profile = Profile.first
-    unless profile
-      profile = Profile.new(name: 'admin')
-      profile.password = 'admin'
-      profile.password_confirmation = 'admin'
-      profile.save
-    end 
     
     if profile && profile.authenticate(params[:session][:password])
       sign_in profile
