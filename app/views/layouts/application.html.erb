@@ -11,11 +11,20 @@
 </head>
 <body>
 	<%= render 'layouts/fbinclude' if yield(:title) =="Bem-Vindo!" %>
-    <div class="container" style="background-color: white;padding-bottom:80px;">
-		<%= render 'layouts/header' %>
-		<%= yield %>
+    <div class="container" style="">
+    	<div class="row">
+    		<div class="span10 offset1" style="background-color: white;padding-bottom:80px;">
+				<%= render 'layouts/header' %>
+				<%= yield %>
+			
+			</div>
+			<div class="span10 offset1">
+				<%= render 'layouts/footer' %>
+			</div>
+		</div>
+		
 	</div>
-	<%= render 'layouts/footer' %>
+	
 	
 </body>
 </html>

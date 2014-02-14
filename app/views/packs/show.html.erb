@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="row">
-	<div class="span12">
-		<div class="inner-box">
+<div class="inner-box">
 <p>
   <b>Category ID:</b>
   <%= get_category(@pack.category_id) %>
@@ -36,6 +34,4 @@
 
 <%= link_to 'Editar', edit_pack_path(@pack), class: "btn btn-info" %>
 <%= link_to 'Cancelar', packs_path, class: "btn" %>
-		</div>
-	</div>
 </div>

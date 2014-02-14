@@ -1,13 +1,9 @@
 <% provide(:title, t(:administration)) %>
-<div class="row">
-	<div class="span12">
 		<div class="inner-box">
 			<% flash.each do |key, value| %>
 				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 			<% end %>  
-			<h1><%=t(:profile)%></h1>
+			<h4><%=t(:profile)%></h4>
 			<%= render 'form' %>
 
 		</div>
-	</div>
-</div>

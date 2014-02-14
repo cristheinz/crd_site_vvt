@@ -1,6 +1,4 @@
 <% provide(:title, t(:welcome)) %>
-<div class="row">
-	<div class="span12">
 		<div id="myCarousel" class="carousel slide">
 			<div class="transparent-box">
 				<%= render 'message' %>
@@ -9,7 +7,7 @@
 				<% x=0%>
 				<% @images.each do |i| %>
 					<div class="item <%= "active" if x<1 %>">
-						<%= image_tag(i.to_s, class:'container') %>
+						<%= image_tag(i.to_s, class:'') %>
 						<%x=1%>
 					</div>
 				<%end%>
@@ -17,8 +15,8 @@
 		</div>
 
 		<div class="row">
-			<div class="span6">
-				<h3><%=t(:star_products)%></h3>
+			<div class="span5">
+				<h4><%=t(:star_products)%></h4>
 				<div class="inner-box">
 					<div class="row-fluid">
 					<% @pl.each do |pack| %>
@@ -27,8 +25,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="span6">
-				<h3><%=t(:promo_products)%></h3>
+			<div class="span5">
+				<h4><%=t(:promo_products)%></h4>
 				<div class="inner-box">
 				<div class="row-fluid">
 					<% @pr.each do |pack| %>
@@ -39,8 +37,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span6">
-				<h3><%=t(:other_products)%></h3>
+			<div class="span5">
+				<h4><%=t(:other_products)%></h4>
 				<div class="inner-box">
 					<div class="row-fluid">
 						<% if @pb.size>3%>
@@ -85,18 +83,18 @@
 				</div>
 				
 			</div>
-			<div class="span6">
-				<h3><%=t(:follow_us)%></h3>
+			<div class="span5">
+				<h4><%=t(:follow_us)%></h4>
 				<center><%=render 'layouts/fbbox'%></center>
-			</div>
-
-			<div class="span8 text">
-				<strong>veja <%= link_to 'aqui', 'http://www.touroperator.com.br/portal/stz04/default.asp?ids=MMCAYY', target: '_blank'%> mais ofertas de viagem que temos para voce...</strong>			
 			</div>
 			
 		</div>
-	</div>
-</div>
+		
+		<div class="inner-box">
+			<p class="lead">
+				<strong><em>veja <%= link_to 'aqui', 'http://www.touroperator.com.br/portal/stz04/default.asp?ids=MMCAYY', target: '_blank'%> mais ofertas de viagem que temos para voce...</em></strong>
+			</p>
+		</div>
 <script>
 $('#myCarousel').carousel({
 	interval: 3000

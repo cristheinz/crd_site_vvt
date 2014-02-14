@@ -1,21 +1,15 @@
 <div class="row-fluid">
-	<div class="span12">
-		<div id='msg0'>
-			<p><i><%=profile.msg1%></i></p>
-		</div>
-		<div id='msg1'>
-			<p><center><%=profile.msg2%></center></p>
-		</div>
+		<p class="lead"><i><%=profile.msg1%></i></p>
+		<p class="msg1"><%=profile.msg2%></p>
 		<div class="row-fluid">
-			<div id='msg2' class="span6 pull-right">
+			<div class="msg2 pull-right">
 				<strong>
-				<p>Tel: <%=profile.tel1%> <%= " / #{profile.tel2}" if profile.tel2 %></p>
-				<%= "<p>Plantao:  #{profile.tel3}</p>".html_safe if profile.tel3 %>
+				<p><%="#{t(:phone)} #{profile.tel1}"%> <%= " / #{profile.tel2}" if profile.tel2 %></p>
+				<%= "<p>#{t(:emergency)}  #{profile.tel3}</p>".html_safe if profile.tel3 %>
 				</strong>
 			</div>
 			<div class="span6">
 				<%=render 'layouts/skype'%>
 			</div>
 		</div>
-	</div>
 </div>

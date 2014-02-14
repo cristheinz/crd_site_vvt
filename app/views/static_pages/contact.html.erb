@@ -1,8 +1,6 @@
 <% provide(:title, t(:contacts) ) %>
-<div class="row">
-	<div class="span12">
 	
-		<div class="transparent-box offset3 span5">
+		<div class="transparent-box offset2 span5">
 			<center>
 				<address>
 					<p><strong><%=profile.title%></strong></p>
@@ -17,20 +15,20 @@
 				</address>
 			</center>
 		</div>
-		<%= image_tag('contact.png', class:'container') %>
+		<%= image_tag('contact.png', class:'') %>
 		
-		<div class="row span12">
-			<%=render 'layouts/skype'%>
+		<div class="row">
+			<%=render 'layouts/skype-call'%>
 		</div>
 		
 		<div class="row">
-			<div class="span6">
-				<h3><%=t(:contact)%></h3>
+			<div class="span5">
+				<h4><%=t(:contact)%></h4>
 				<div class="inner-box">
-				<%= form_for(:visitor, url: contact_path, class: '') do |f| %>
-					<%= f.text_field :name, placeholder: t(:name), class: 'span5' %>
-					<%= f.text_field :email, placeholder: "Email", class: 'span5' %>
-					<%= f.text_area :message, placeholder: t(:message), rows: 5, class: 'span5' %>
+				<%= form_for(:visitor, url: contact_path, class: "") do |f| %>
+					<%= f.text_field :name, placeholder: t(:name), class: 'span4' %>
+					<%= f.text_field :email, placeholder: "Email", class: 'span4' %>
+					<%= f.text_area :message, placeholder: t(:message), rows: 5, class: 'span4' %>
   					<%= f.submit t(:send), class: "btn btn-large btn btn btn-info" %>
 				<% end %>
 				<% flash.each do |key, value| %>
@@ -39,8 +37,8 @@
 				</div>
 			</div>
 
-			<div class="span6">
-				<h3><%=t(:location)%></h3>
+			<div class="span5">
+				<h4><%=t(:location)%></h4>
 				<div class="inner-box">
 				<!--http://stackoverflow.com/questions/903457/ruby-on-rails-gem-for-google-map-integration-->
 				<%= image_tag('http://maps.google.com/maps/api/staticmap?size=512x255&maptype=roadmap&zoom=15&sensor=false&markers=color:red|label:Vou Viajar Agencia de Turismo|Rua Via Veneto, Santa Felicidade - Curitiba/PR - Brasil', class:'container') %>
@@ -49,6 +47,4 @@
 
 		</div>
 		
-	</div>
-</div>
 

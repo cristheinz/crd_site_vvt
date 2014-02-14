@@ -1,126 +1,108 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//background-color:
+$body-bg-color:             rgb(235, 235, 235);// GRAY
+$footer-bg-color:           rgb(254, 252, 255);//#FEFCFF; GRAY
+$tbox-bg-color:             rgba(33,  39,  43, 0.870588);// BLACK
+$table-error-bg-color:      rgb(242, 222, 222);//#f2dede; RED
+$table-warning-bg-color:    rgb(252, 248, 227);//#fcf8e3; YELLOW
+$table-success-bg-color:    rgb(223, 240, 216);//#dff0d8; GREEN
+$h3-bg-color:               rgb( 27, 180, 232);//BLUE
+//color:
+$footer-color:              rgb(153, 153, 153);//#999; GRAY
+$footer-a-color:            rgb( 85,  85,  85);//#555; GRAY
+$footer-a-hover-color:      rgb( 34,  34,  34);//#222; BLACK
+$h3-color:                  rgb(255, 255, 255);//white; WHITE
+$page-title-color:          rgb(255, 255, 255);//WHITE
+$shadow-color-from:         rgba( 0,   0,   0, 0.398438); //BLACK
+$shadow-color-to:           rgba( 0,   0,   0, 0.0742188); //BLACK
+$the-brand-color:           rgb(204, 204, 204);//#ccc; GRAY
+$about-color:               rgb(  0,  22, 255);//BLUE
+$msg1-color:                rgb(226, 214, 186);//BROWN
+$msg2-color:                rgb( 27, 180, 232);//BLUE
+$tbox-color:                rgb(255, 255, 255);//WHITE 
+
 /* universal */
 html {
-  //overflow-y: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 body {
-  background-color: rgb(235, 235, 235);
+  background-color: $body-bg-color;
+  //margin-right: 100px;
   //padding-top: 0px;
   //padding-bottom: 0px;
 }
 footer {
-  //background-color: #3366FF;
-  //background-color: #E5E4E2;
-  background-color: #FEFCFF;
-  //position: fixed;
-  //bottom: 0px;
-  //padding-left: 50px;
-  //margin-left: 0px;
-  //margin-top: 0px;
+  background-color: $footer-bg-color;
   padding-top: 45px;
   border-top: 1px solid #eaeaea;
-  color: #999;
+  color: $footer-color;
 }
 footer a {
-  color: #555;
+  color: $footer-a-color;
 }  
 footer a:hover { 
-  color: #222;
+  color: $footer-a-hover-color;
 }
-h3 {
-  background: rgb(27, 180, 232) url('icon.png') 10px no-repeat; 
-  color: white;
-  padding: 5px 60px;
-  font: italic normal normal 22px/1.3em 'open sans', sans-serif;
+h4 {
+  background: $h3-bg-color url('icon.png') 10px no-repeat;
+  color: $h3-color;
+  padding: 15px 60px;
 }
 
 .page-title {
   position: absolute;
-  width:100%;
-  padding-top: 7%;
-  //margin-left: 25%;
-  font-family: arial;
-  line-height: 0.5em;
+  //width:100%;
+  padding-top: 50px;
   letter-spacing: -2px;
-  font-size: 48px;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.398438) 0px 1px 3px, rgba(0, 0, 0, 0.0742188) 0px 0px 30px;
+  color: $page-title-color;
+  //text-align: center;
+  text-shadow: $shadow-color-from 0px 1px 3px, $shadow-color-to 0px 0px 30px;
 }
 .the-brand {
-  color: #ccc;
-  letter-spacing: -1px;
+  color: $the-brand-color;
   padding-top: 9px;
-  font-weight: bold;
 }
 
-.about p, .about li {
-  font: italic normal normal 22px/1.3em 'open sans', sans-serif;
-  color: rgb(0, 22, 255);
-  margin-right: 60px;
-  margin-left: 60px;
-}
-//@media (max-width: 979px) {}
-@media (max-width: 767px) {
-    .about p, .about li {
-      font: italic normal normal 18px/1.3em 'open sans', sans-serif;
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-}
+
 
 .inner-box{
   margin-left: 5px; 
   margin-right: 5px;
 }
-#msg0{
-  font: normal normal normal 18px/1.3em 'open sans', sans-serif;
-  //padding-bottom: 15px;
-  
+.msg1{
+  color: $msg1-color;
+  text-align: center;
 }
-#msg1{
-  font: normal normal normal 18px/1.3em 'open sans', sans-serif;
-  color: rgb(226, 214, 186);
-  //text-align: center;
-  //padding-right: 15px;
-  
-}
-#msg2{
+.msg2{
   text-align: right;
   padding-right: 15px;
   padding-top: 25px;
-  //color: rgb(226, 214, 186);
-  color: rgb(27, 180, 232)
+  color: $msg2-color;
 }
 .transparent-box {
-  background-color: rgba(33, 39, 43, 0.870588);
+  background-color: $tbox-bg-color;
   position: absolute;
   padding-right: 35px;
   padding-left: 35px;
   padding-top: 25px;
   padding-bottom: 15px;
   z-index:1;
-  //font: italic normal normal 18px/1.3em 'open sans', sans-serif;
-  color: rgb(255, 255, 255);
+  color: $tbox-color;
 }
 @media (max-width: 767px) {
     .transparent-box {
-      //margin-top: 0px;
       position: relative;
     }
 }
-.text {
-  font: italic normal normal 18px/1.3em 'open sans', sans-serif;
-  text-align: center;
-  padding-right: 20px;
-}
 .table tbody tr {
-    &.error > td { background-color: #f2dede !important; }
+    &.error > td { background-color: $table-error-bg-color !important; }
     //&.error:hover > td { background-color: #b94a48 !important; }
-    &.success > td { background-color: #dff0d8 !important; }
+    &.success > td { background-color: $table-success-bg-color !important; }
     //&.success:hover > td { background-color: #468847 !important; }
-    &.warning > td { background-color: #fcf8e3 !important; }
+    &.warning > td { background-color: $table-warning-bg-color !important; }
     //&.warning:hover > td { background-color: #f89406 !important; }
 }

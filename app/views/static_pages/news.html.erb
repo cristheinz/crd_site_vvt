@@ -1,7 +1,5 @@
 <% provide(:title, t(:news)) %>
-<div class="row">
-	<div class="span12">
-		<h3><%=t(:lnews)%></h3>
+		<h4><%=t(:lnews)%></h4>
 		<div class="inner-box">
 			<div class="row-fluid">
 			<%@feed.entries.each do |entry| %>
@@ -16,5 +14,3 @@
 			</div>
 			<div class=""><%="#{t(:source)}: #{@feed.title}"%></div>
 		</div>
-	</div>
-</div>
