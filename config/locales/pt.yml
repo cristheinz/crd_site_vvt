@@ -75,4 +75,11 @@ pt:
   publish: Publicado 
   warn: Sem imagem ou pdf
   visible: Visível no site
-  invisible: Invisível no site
+  invisible: InvisÃ­vel no site
+  cambi: Câmbio
+  val: Montante
+  from: Moeda local
+  to: Moeda pretendida
+  cambi_msg0: "1 %{from} vale %{ft}. Assim, <strong>%{fval}</strong> corresponde a <strong>%{fr}</strong>."
+  cambi_msg1: Está a utilizar a mesma moeda.
+  cambi_msg2: Deve preencher um valor.

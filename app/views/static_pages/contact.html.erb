@@ -1,5 +1,4 @@
 <% provide(:title, t(:contacts) ) %>
-	
 		<div class="transparent-box offset2 span5">
 			<center>
 				<address>
@@ -7,19 +6,21 @@
 					<%=profile.addr1%><br/>
 					<%=profile.addr2%><br/>
 					<p>
-						<abbr title="<%=t(:att)%>">A:</abbr> <%=profile.att %><br/>
-						<abbr title="<%=t(:phone)%>">T:</abbr> <%=profile.tel1%> <%= " / #{profile.tel2}" if profile.tel2 %><br/>
-						<abbr title="<%=t(:emergency)%>">P:</abbr> <%=profile.tel3%><br/>
-						<abbr title="Email">E:</abbr> <a href="mailto:#"><%=profile.email%></a><br/>
+						<%=profile.att %><br/>
+						<%=profile.tel1%> <%= " / #{profile.tel2}" if profile.tel2 %><br/>
+						<%=" #{t(:emergency)}: #{profile.tel3}"%><br/>
+						<a href="mailto:#"><%=profile.email%></a><br/>
 					</p>
 				</address>
 			</center>
 		</div>
-		<%= image_tag('contact.png', class:'') %>
 		
-		<div class="row">
-			<%=render 'layouts/skype-call'%>
-		</div>
+		<!--
+		<div class="transparent-box span1 pull-rigth">
+			<center><%=render 'layouts/skype-call'%></center>
+		</div>-->
+		
+		<%= image_tag('contact.png', class:'') %>
 		
 		<div class="row">
 			<div class="span5">

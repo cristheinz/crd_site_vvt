@@ -1,118 +1,137 @@
 <% provide(:title, t(:info)) %>
-		<h4><%=t(:info)%></h4>
-		<div class="inner-box">
+<h4><%=t(:cambi)%></h4>
+<div class="inner-box">
+	<%= form_for(:cambi, url: info_path, remote: true, class: '') do |f| %>
+		<%= f.label :val, t(:val), class: "visible-desktop span3" %>
+		<%= f.label :from, t(:from), class: "visible-desktop span3" %>
+		<%= f.label :to, t(:to), class: "visible-desktop span3" %>
+		
+		<%= f.label :val, t(:val), class: "hidden-desktop" %>
+		<%= f.number_field :val, value: 0.00, step: 0.01, min: 0, class: 'span3'  %>
+		<%= f.label :from, t(:from), class: "hidden-desktop" %>
+		<%= f.select(:from, options_for_select(currencies, 'BRL'), class: 'span3' )%>
+		<%= f.label :to, t(:to), class: "hidden-desktop" %>
+		<%= f.select(:to, options_for_select(currencies, 'USD'), class: 'span3' )%>
+		
+		<div class="field">
+			<%= f.submit 'Converter', class: 'btn btn-info' %>
+			<button id="change" class="btn "><i class="icon-retweet"></i> Inverter</button>
+		</div>
+	<% end %>
+	<div id="data-result"></div>
+</div>
 
-			<div class="accordion" id="accordion2">
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
-							<div class="row-fluid">
-								<%= image_tag 'thumb4.png', class:'pull-right'%>
-								<strong><%=t(:t4)%></strong>
-							</div>
-						</a>
-					</div>
-					<div id="collapse1" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<ul class="nav nav-pills nav-stacked"> 
-								<li><%= link_to t(:l0), 'http://www.itamaraty.gov.br/cerimonial/corpo-diplomatico/lista', target: '_blank'%></li>
-								<li><%= link_to t(:l1), 'http://www.itamaraty.gov.br/servicos-do-itamaraty/enderecos-de-consulados-estrangeiros-no-brasil', target: '_blank'%></li>
-								<li><%= link_to t(:l2), 'http://www.itamaraty.gov.br/o-ministerio/o-brasil-no-exterior', target: '_blank'%></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
-							<div class="row-fluid">
-								<%= image_tag 'thumb5.png', class:'pull-right' %>
-								<strong><%=t(:t5)%></strong>
-							</div>
-						</a>
-					</div>
-					<div id="collapse2" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<%= render 'alfandega'%>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
-							<div class="row-fluid">
-								<%= image_tag 'thumb6.png', class:'pull-right'%>
-								<strong><%=t(:t6)%></strong>
-							</div>
-						</a>
-					</div>
-					<div id="collapse3" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<%= image_tag 'bagagem.jpg'%>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
-							<div class="row-fluid">
-								<%= image_tag 'thumb7.png', class:'pull-right' %>
-								<strong><%=t(:t7)%></strong>
-							</div>
-						</a>
-					</div>
-					<div id="collapse4" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<%= render 'animais'%>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
-							<div class="row-fluid">
-								<%= image_tag 'thumb8.png', class:'pull-right' %>
-								<strong><%=t(:t8)%></strong>
-							</div>
-						</a>
-					</div>
-					<div id="collapse5" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<%= render 'passaporte'%>
-						</div>
-					</div>
+<h4><%=t(:info)%></h4>
+<div class="inner-box">
+	<div class="tabbable">
+		<!-- Only required for left/right tabs -->
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="#tab1" data-toggle="tab">
+				<center>
+					<%= image_tag 'thumb4.png', class:''%>
+					<br/>
+					<strong><%= t(:t4)%></strong>
+				</center> </a>
+			</li>
+			<li>
+				<a href="#tab2" data-toggle="tab">
+				<center>
+					<%= image_tag 'thumb5.png', class:''%>
+					<br/>
+					<strong><%= t(:t5)%></strong>
+				</center> </a>
+			</li>
+			<li>
+				<a href="#tab3" data-toggle="tab">
+				<center>
+					<%= image_tag 'thumb6.png', class:''%>
+					<br/>
+					<strong><%= t(:t6)%></strong>
+				</center> </a>
+			</li>
+			<li>
+				<a href="#tab4" data-toggle="tab">
+				<center>
+					<%= image_tag 'thumb7.png', class:''%>
+					<br/>
+					<strong><%= t(:t7)%></strong>
+				</center></a>
+			</li>
+			<li>
+				<a href="#tab5" data-toggle="tab">
+				<center>
+					<%= image_tag 'thumb8.png', class:''%>
+					<br/>
+					<strong><%= t(:t8)%></strong>
+				</center> </a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane" id="tab1">
+				<div class="accordion-inner">
+					<ul class="nav nav-pills nav-stacked">
+						<li>
+							<%= link_to t(:l0), 'http://www.itamaraty.gov.br/cerimonial/corpo-diplomatico/lista', target: '_blank'%>
+						</li>
+						<li>
+							<%= link_to t(:l1), 'http://www.itamaraty.gov.br/servicos-do-itamaraty/enderecos-de-consulados-estrangeiros-no-brasil', target: '_blank'%>
+						</li>
+						<li>
+							<%= link_to t(:l2), 'http://www.itamaraty.gov.br/o-ministerio/o-brasil-no-exterior', target: '_blank'%>
+						</li>
+					</ul>
 				</div>
 			</div>
-
+			<div class="tab-pane" id="tab2">
+				<div class="accordion-inner">
+					<%= render 'alfandega'%>
+				</div>
+			</div>
+			<div class="tab-pane" id="tab3">
+				<div class="accordion-inner">
+					<%= image_tag 'bagagem.jpg'%>
+				</div>
+			</div>
+			<div class="tab-pane" id="tab4">
+				<div class="accordion-inner">
+					<%= render 'animais'%>
+				</div>
+			</div>
+			<div class="tab-pane" id="tab5">
+				<div class="accordion-inner">
+					<%= render 'passaporte'%>
+				</div>
+			</div>
 		</div>
+	</div>
+</div>
 		
-		<h4><%=t(:links)%></h4>
-		<div class="inner-box">
-			<ul class="nav nav-pills">
-  				<li class="span2">
-    				<a href="http://www.infraero.gov.br/voos/index.aspx" target="_blank" class="thumbnail">
-   						<%= image_tag 'thumb0.png'%>
-   						<strong><%= t(:t0)%></strong>
-    				</a>
-  				</li>
-  				<li class="span2">
-    				<a href="http://www2.tursites.com.br/cache/mapa_fuso2.htm" target="_blank" class="thumbnail">
-      					<%= image_tag 'thumb1.png' %>
-      					<strong><%= t(:t1)%></strong>
-    				</a>
-  				</li>
-  				<li class="span2">
-    				<a href="http://portuguese.brazil.usembassy.gov/pt/visas.html" target="_blank" class="thumbnail">
-      					<%= image_tag 'thumb2.png'%>
-      					<strong><%= t(:t2)%></strong>
-    				</a>
-  				</li>
-  				<li class="span2">
-    				<a href="http://europa.eu/index_pt.htm" target="_blank" class="thumbnail">
-    					<%= image_tag 'thumb3.png'%>
-      					<strong><%= t(:t3)%></strong>
-    				</a>
-  				</li>
-			</ul>
-		</div>
+<h4><%=t(:links)%></h4>
+<div class="inner-box">
+	<ul class="nav nav-pills">
+		<li class="span2">
+			<a href="http://www.infraero.gov.br/voos/index.aspx" target="_blank" class="thumbnail"> <%= image_tag 'thumb0.png'%> <strong><%= t(:t0)%></strong> </a>
+		</li>
+		<li class="span2">
+			<a href="http://www2.tursites.com.br/cache/mapa_fuso2.htm" target="_blank" class="thumbnail"> <%= image_tag 'thumb1.png' %> <strong><%= t(:t1)%></strong> </a>
+		</li>
+		<li class="span2">
+			<a href="http://portuguese.brazil.usembassy.gov/pt/visas.html" target="_blank" class="thumbnail"> <%= image_tag 'thumb2.png'%> <strong><%= t(:t2)%></strong> </a>
+		</li>
+		<li class="span2">
+			<a href="http://europa.eu/index_pt.htm" target="_blank" class="thumbnail"> <%= image_tag 'thumb3.png'%> <strong><%= t(:t3)%></strong> </a>
+		</li>
+	</ul>
+</div>
 
+<script>
+$('#change').click(function(){
+	var f = $('#cambi_from').val();
+	var t = $('#cambi_to').val();
+	$('#cambi_from').val(t);
+	$('#cambi_to').val(f);
+	var h = $('#data-result').html();
+	if(h=='') return false;
+});
+</script>
