@@ -7,7 +7,7 @@
 					<%=profile.addr2%><br/>
 					<p>
 						<%=profile.att %><br/>
-						<%=profile.tel1%> <%= " / #{profile.tel2}" if profile.tel2 %><br/>
+						<%=profile.tel1%> <%= " / #{profile.tel2}" unless profile.tel2.to_s.empty? %><br/>
 						<%=" #{t(:emergency)}: #{profile.tel3}"%><br/>
 						<a href="mailto:#"><%=profile.email%></a><br/>
 					</p>

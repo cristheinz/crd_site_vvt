@@ -43,7 +43,7 @@ class StaticPagesController < ApplicationController
 
   def news
     profile=Profile.first
-    if profile && !profile.rss.empty?
+    if profile && !profile.rss.to_s.empty?
       @feed = Feedzirra::Feed.fetch_and_parse(profile.rss)
     else
       @feed = Feedzirra::Feed.fetch_and_parse(view_context.default_rss)

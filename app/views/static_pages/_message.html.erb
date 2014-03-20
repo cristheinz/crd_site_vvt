@@ -4,8 +4,8 @@
 		<div class="row-fluid">
 			<div class="msg2 pull-right">
 				<strong>
-				<p><%="#{t(:phone)} #{profile.tel1}"%> <%= " / #{profile.tel2}" if profile.tel2 %></p>
-				<%= "<p>#{t(:emergency)}  #{profile.tel3}</p>".html_safe if profile.tel3 %>
+				<p><%="#{t(:phone)} #{profile.tel1}"%> <%= " / #{profile.tel2}" unless profile.tel2.to_s.empty? %></p>
+				<%= "<p>#{t(:emergency)}  #{profile.tel3}</p>".html_safe unless profile.tel3.to_s.empty? %>
 				</strong>
 			</div>
 			<div class="span6">

@@ -9,7 +9,7 @@ CrdSiteVvt::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = true #estava false
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -71,8 +71,9 @@ CrdSiteVvt::Application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            'vouviajarturismo@gmail.com',
-    password:             '<password>',
+    user_name:            'cristheinz@gmail.com',
+    password:             'password',
     authentication:       'plain',
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true  
+  }
 end
